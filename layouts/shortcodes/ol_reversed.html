@@ -1,0 +1,6 @@
+{{ $content := .Inner | markdownify }}
+{{ $content := $content | replaceRE "<ol>" "" | replaceRE "</ol>" "" | safeHTML }}
+<ol reversed>
+  {{ $content }}
+</ol>
+
